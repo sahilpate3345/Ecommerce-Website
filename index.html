@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">LUXE.</div>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search products...">
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#" id="historyLink">Purchase History</a></li>
+        </ul>
+        
+        <div class="nav-icons">
+            <i class="fas fa-user"></i>
+            <div class="cart-icon-container" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeCart">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <div id="cartItems" class="cart-items-list">
+                <p>Your cart is empty.</p>
+            </div>
+            <div class="cart-total">
+                <h3>Total: $<span id="totalPrice">0.00</span></h3>
+            </div>
+            <button class="btn primary-btn" id="checkoutBtn" style="width: 100%; margin-top: 1rem;">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Purchase History Modal -->
+    <div class="modal" id="historyModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeHistory">&times;</span>
+            <h2>Purchase History</h2>
+            <div id="historyItems" class="history-items-list">
+                <p>No past purchases found.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section (Home) -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Elevate Your Style</h1>
+            <p>Discover our latest collection of premium fashion and accessories designed for the modern individual.</p>
+            <a href="#shop" class="btn primary-btn">Shop Now</a>
+        </div>
+        <div class="hero-image-container">
+            <img src="images/hero-image.jpg" alt="Hero Image">
+        </div>
+    </header>
+
+    <!-- Featured Products (Shop) -->
+    <section class="featured-products" id="shop">
+        <h2 class="section-title">All Products</h2>
+        <div class="product-grid" id="productGrid">
+            <!-- Product 1 -->
+            <div class="product-card" data-name="classic white tee" data-price="29.99">
+                <div class="product-image">
+                    <img src="images/card-image1.jpg" alt="Classic White Tee">
+                </div>
+                <div class="product-info">
+                    <h4>Classic White Tee</h4>
+                    <p class="price">$29.99</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Classic White Tee', 29.99)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card" data-name="denim jacket" data-price="89.99">
+                <div class="product-image">
+                    <img src="images/card-image2.jpg" alt="Denim Jacket">
+                </div>
+                <div class="product-info">
+                    <h4>Denim Jacket</h4>
+                    <p class="price">$89.99</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Denim Jacket', 89.99)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card" data-name="summer dress" data-price="59.99">
+                <div class="product-image">
+                    <img src="images/card-image3.jpg" alt="Summer Dress">
+                </div>
+                <div class="product-info">
+                    <h4>Summer Dress</h4>
+                    <p class="price">$59.99</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Summer Dress', 59.99)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card" data-name="leather bag" data-price="120.00">
+                <div class="product-image">
+                    <img src="images/card-image4.jpg" alt="Leather Bag">
+                </div>
+                <div class="product-info">
+                    <h4>Leather Bag</h4>
+                    <p class="price">$120.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Leather Bag', 120.00)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
